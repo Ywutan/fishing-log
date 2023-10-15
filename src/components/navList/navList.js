@@ -61,8 +61,7 @@ function NavList({children}) {
             data-te-sidenav-content="#content"
             data-te-sidenav-scroll-container="#scrollContainer">
             <div className="pt-6">
-            <div id="header-content" className="pl-4">
-            
+            <div id="header-content" className="pl-4" onClick={()=>{router.push("/")}}>
             {/*
             <img
                 src=""
