@@ -1,3 +1,4 @@
+import NavList from "../components/navList/navList";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 
@@ -5,7 +6,7 @@ function Layout({children}) {
     return (
         <html>
             <body>
-                {children}
+                <NavList children={children} />
             </body>
         </html>
     );
