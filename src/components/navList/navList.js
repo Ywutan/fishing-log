@@ -1,43 +1,47 @@
 "use client"
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-
-const componentInit = () => {
-    import("tw-elements")
-    .then(
-        (elements) => {
-            const { Sidenav, Ripple, initTE } = elements;
-            initTE({ Sidenav, Ripple});
-            const sidenav = document.getElementById("full-screen-example");
-            const sidenavInstance = Sidenav.getInstance(sidenav);
-            let innerWidth = null;
-            const setMode = (e) => {
-              // Check necessary for Android devices
-              if (window.innerWidth === innerWidth) {
-                return;
-              }
-            
-              innerWidth = window.innerWidth;
-            
-              if (window.innerWidth < sidenavInstance.getBreakpoint("sm")) {
-                sidenavInstance.changeMode("over");
-                sidenavInstance.hide();
-              } else {
-                sidenavInstance.changeMode("side");
-                sidenavInstance.show();
-              }
-            };
-            
-            if (window.innerWidth < sidenavInstance.getBreakpoint("sm")) {
-              setMode();
-            }
-            
-            // Event listeners
-            window.addEventListener("resize", setMode);
-        }
-    );
-}
+//import { useRouter } from 'next/router';
 
 function NavList({children}) {
+
+    const router = useRouter();
+
+    const componentInit = () => {
+        import("tw-elements")
+        .then(
+            (elements) => {
+                const { Sidenav, Ripple, initTE } = elements;
+                initTE({ Sidenav, Ripple});
+                const sidenav = document.getElementById("full-screen-example");
+                const sidenavInstance = Sidenav.getInstance(sidenav);
+                let innerWidth = null;
+                const setMode = (e) => {
+                  // Check necessary for Android devices
+                  if (window.innerWidth === innerWidth) {
+                    return;
+                  }
+                
+                  innerWidth = window.innerWidth;
+                
+                  if (window.innerWidth < sidenavInstance.getBreakpoint("sm")) {
+                    sidenavInstance.changeMode("over");
+                    sidenavInstance.hide();
+                  } else {
+                    sidenavInstance.changeMode("side");
+                    sidenavInstance.show();
+                  }
+                };
+                
+                if (window.innerWidth < sidenavInstance.getBreakpoint("sm")) {
+                  setMode();
+                }
+                
+                // Event listeners
+                window.addEventListener("resize", setMode);
+            }
+        );
+    }
 
     useEffect(() => {
         componentInit();
@@ -58,11 +62,14 @@ function NavList({children}) {
             data-te-sidenav-scroll-container="#scrollContainer">
             <div className="pt-6">
             <div id="header-content" className="pl-4">
+            
+            {/*
             <img
                 src=""
                 alt="Avatar"
                 className="mb-4 h-auto rounded-full align-middle"
                 style={{maxWidth: "50px"}} />
+            */}
 
             <h4 className="mb-2 text-2xl font-medium leading-[1.2]">John Doe</h4>
             <p className="mb-4">John_Doe@JohnDoe.com</p>
@@ -94,6 +101,7 @@ function NavList({children}) {
                             data-te-collapse-show>
                             <li  className="relative">
                                 <a
+                                    onClick={()=>{router.push("/weather/forecast")}}
                                     className="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                                     data-te-sidenav-link-ref>
                                     Forecast
@@ -101,6 +109,7 @@ function NavList({children}) {
                             </li>
                             <li  className="relative">
                                 <a
+                                    onClick={()=>{router.push("/weather/history")}}
                                     className="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                                     data-te-sidenav-link-ref>
                                     History
