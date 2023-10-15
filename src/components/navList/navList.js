@@ -61,14 +61,15 @@ function NavList({children}) {
             data-te-sidenav-content="#content"
             data-te-sidenav-scroll-container="#scrollContainer">
             <div className="pt-6">
-            <div id="header-content" className="pl-4" onClick={()=>{router.push("/")}}>
-            {/*
+            <div id="header-content" className="pl-4">
+            
             <img
+                onClick={()=>{router.push("/")}}
                 src=""
                 alt="Avatar"
                 className="mb-4 h-auto rounded-full align-middle"
                 style={{maxWidth: "50px"}} />
-            */}
+            
 
             <h4 className="mb-2 text-2xl font-medium leading-[1.2]">John Doe</h4>
             <p className="mb-4">John_Doe@JohnDoe.com</p>
