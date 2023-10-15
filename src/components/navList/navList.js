@@ -59,13 +59,13 @@ function NavList({children}) {
             <div className="pt-6">
             <div id="header-content" className="pl-4">
             <img
-                src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
+                src=""
                 alt="Avatar"
                 className="mb-4 h-auto rounded-full align-middle"
                 style={{maxWidth: "50px"}} />
 
-            <h4 className="mb-2 text-2xl font-medium leading-[1.2]">Ann Smith</h4>
-            <p className="mb-4">ann_s@mdbootstrap.com</p>
+            <h4 className="mb-2 text-2xl font-medium leading-[1.2]">John Doe</h4>
+            <p className="mb-4">John_Doe@JohnDoe.com</p>
             </div>
             <hr className="border-gray-300" />
             </div>
@@ -77,12 +77,7 @@ function NavList({children}) {
                         <a
                             className="group flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                             data-te-sidenav-link-ref>
-                        <span className="mr-4 [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:fill-gray-700 dark:[&>svg]:fill-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                          <path d="M96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM208 288h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H144c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm96-96c0 35.3-28.7 64-64 64s-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64zM512 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V80zM496 192c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm16 144c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V336z" />
-                        </svg>
-                        </span>
-                        <span>Contacts</span>
+                        <span>Weather</span>
                         <span
                             className="absolute right-0 ml-auto mr-[0.8rem] rotate-180 transition-all duration-300 ease-linear motion-reduce:transition-none [&>svg]:h-3 [&>svg]:w-3 [&>svg]:fill-gray-600 dark:[&>svg]:fill-gray-300"
                             data-te-sidenav-rotate-icon-ref>
@@ -101,21 +96,14 @@ function NavList({children}) {
                                 <a
                                     className="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                                     data-te-sidenav-link-ref>
-                                    Family
+                                    Forecast
                                 </a>
                             </li>
                             <li  className="relative">
                                 <a
                                     className="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                                     data-te-sidenav-link-ref>
-                                    Friends
-                                </a>
-                            </li>
-                            <li  className="relative">
-                                <a
-                                    className="flex h-6 cursor-pointer items-center truncate rounded-[5px] py-4 pl-[3.4rem] pr-6 text-[0.78rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
-                                    data-te-sidenav-link-ref>
-                                    Work
+                                    History
                                 </a>
                             </li>
                         </ul>
@@ -125,12 +113,7 @@ function NavList({children}) {
                             className="group flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-700 outline-none transition duration-300 ease-linear hover:bg-gray-300/30 hover:text-inherit hover:outline-none focus:bg-gray-300/30 focus:text-inherit focus:outline-none active:bg-gray-300/30 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                             href="#!"
                             data-te-sidenav-link-ref>
-                        <span className="mr-4 [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:fill-gray-700 dark:[&>svg]:fill-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">  
-                        <path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z" />
-                        </svg>
-                        </span>
-                            <span>Drafts</span>
+                            <span>Logs</span>
                         </a>
                     </li>
                 </ul>
