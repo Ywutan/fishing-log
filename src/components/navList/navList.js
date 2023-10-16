@@ -131,9 +131,6 @@ function NavList({children}) {
 
         <div className="min-h-screen w-full bg-gray-50 !pl-0 text-center sm:!pl-60" id="content">
         <div className="py-12 text-center">
-        <h3 className="my-12 text-[1.75rem] font-medium leading-[1.2]">
-            Resize to change the mode
-        </h3>
             {children}
         <button 
             id="toggler" 

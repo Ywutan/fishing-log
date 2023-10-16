@@ -1,12 +1,17 @@
+"use client"
+import Chart from 'chart.js/auto';
 import NavList from "../components/navList/navList";
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import { Provider } from "react-redux";
+import { store } from "../components/store/store";
 
 function Layout({children}) {
     return (
-        <html>
-            <body>
-                <NavList children={children} />
+        <html lang="en">
+            <body>  
+                <Provider store={store}>
+                    <NavList>{children}</NavList>
+                </Provider>
             </body>
         </html>
     );
