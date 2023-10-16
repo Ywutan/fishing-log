@@ -1,8 +1,10 @@
+import MeteoForecast from "../../../components/meteo/meteoForecast";
+
 function Forecast() {
     return (
-        <div>
-            Weather Forecast
-        </div>
+        <>
+            <MeteoForecast/>
+        </>
     );
 }
 
