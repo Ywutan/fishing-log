@@ -1,9 +1,9 @@
-import MeteoForecast from "../../../components/meteo/meteoForecast";
+import Meteo from "../../../components/meteo/meteo";
 
 function Forecast() {
     return (
         <>
-            <MeteoForecast/>
+            <Meteo typeMeteo="forecast"/>
         </>
     );
 }

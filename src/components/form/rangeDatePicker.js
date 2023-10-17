@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setParams } from "../store/store";
+import { setParamsForecast, setParamsArchive } from "../store/store";
 
 
 const componentInit = async () => {
@@ -15,14 +15,20 @@ const componentInit = async () => {
 }
 
 
-export default function RangeDatePicker({ setDataParams }) {
+export default function RangeDatePicker({ typeMeteo }) {
+
+  const hourlyParamsState = {
+    forecast: 'hourlyParamsForecast',
+    archive: 'hourlyParamsArchive'
+  }
 
   const router = useRouter();
-  const [data, setData] = useState(useSelector(state => state.hourlyParams));
+  const [data, setData] = useState(useSelector(state => state[hourlyParamsState[typeMeteo]]));
   const [dataTemp, setDataTemp] = useState(null);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const dataParams = useSelector(state => state.hourlyParams);
+  const dataParams = useSelector(state => state[hourlyParamsState[typeMeteo]]);
+
 
   useEffect(() => {
     componentInit();
@@ -36,7 +42,13 @@ export default function RangeDatePicker({ setDataParams }) {
 
   const applyData = (e) => { 
     if (e.target.id === "Validate") {
-      dataTemp ? dispatch(setParams(dataTemp)) : dispatch(setParams(dataParams));
+      if(typeMeteo === 'forecast') {
+        dataTemp ? dispatch(setParamsForecast(dataTemp)) : dispatch(setParamsForecast(dataParams));
+      } 
+      if(typeMeteo === 'archive') {
+        dataTemp ? dispatch(setParamsArchive(dataTemp)) : dispatch(setParamsArchive(dataParams));
+      }
+        
       setDataTemp(null)
     }
     setOpen(false);
