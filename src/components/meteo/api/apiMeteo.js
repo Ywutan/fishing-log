@@ -1,7 +1,7 @@
 //HOURLY
 
 const getUrlEndPoint = (type) => {
-    return type ? "https://archive-api.open-meteo.com/v1/era5?":"https://api.open-meteo.com/v1/forecast?";
+  return type ? "https://archive-api.open-meteo.com/v1/archive?":"https://api.open-meteo.com/v1/forecast?";
 }
 
 

@@ -1,8 +1,10 @@
+import Meteo from "../../../components/meteo/meteo";
+
 function History() {
     return (
-        <div>
-            Weather History
-        </div>
+        <>
+            <Meteo type="archive"/>
+        </>
     );
 }
 
