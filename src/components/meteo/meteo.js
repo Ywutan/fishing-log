@@ -8,18 +8,22 @@ import Loading from "../loader/loading";
 import { LoadMeteoData } from "./loadMeteoData";
 import { MapData, optionsLineChart } from "./mapData";
 
-export default function Meteo({type}) {
+export default function Meteo({typeMeteo}) {
+
+  const hourlyParamsState = {
+    forecast: 'hourlyParamsForecast',
+    archive: 'hourlyParamsArchive'
+  }
 
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState('');
-  const dataParams = useSelector(state => state.hourlyParams);
-  
+  const dataParams = useSelector(state => state[hourlyParamsState[typeMeteo]]);
 
   useEffect(() => {
 
     setLoading(true);
-    LoadMeteoData({dataParams, getMeteoDatas, type})
+    LoadMeteoData({dataParams, getMeteoDatas, typeMeteo})
     .then((response) => {
       const data = response.filter((d) => d.hourly).map((d) => d.hourly);
       setData(MapData({data}));
@@ -51,7 +55,7 @@ export default function Meteo({type}) {
   if (data)
     return (
       <>
-        <RangeDatePicker />
+        <RangeDatePicker typeMeteo={typeMeteo} />
         <Line options={optionsLineChart} data={data} />
       </>
     );

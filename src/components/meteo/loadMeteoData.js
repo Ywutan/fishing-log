@@ -1,11 +1,11 @@
-export function LoadMeteoData({dataParams, getMeteoDatas, type}) {
+export function LoadMeteoData({dataParams, getMeteoDatas, typeMeteo}) {
 
     const meteoParams = {
       latitude: dataParams.latitudeLongitude.split(',').map(d => d.trim())[0],
       longitude: dataParams.latitudeLongitude.split(',').map(d => d.trim())[1]
     };
 
-    if (type === 'archive') {
+    if (typeMeteo === 'archive') {
         meteoParams['timeZone'] = 'auto';
     }
     
